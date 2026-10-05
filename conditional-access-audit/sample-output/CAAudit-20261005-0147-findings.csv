@@ -1,0 +1,8 @@
+"Severity","Check","Policy","Finding"
+"High","Break-glass","CA004-Block-High-SignIn-Risk","bg-admin02@paulhwangsec.onmicrosoft.com is targeted and not excluded (All users). This applies now."
+"High","Legacy auth","CA003-Block-Legacy-Auth","Legacy authentication block exists but is report-only, so legacy protocols are still allowed."
+"Medium","MFA coverage","","2 user(s) have MFA only for specific apps or under conditions: Raj Patel via CA006-MFA-Office365-Only [apps: Office 365 (app group)]; Tom Becker via CA006-MFA-Office365-Only [apps: Office 365 (app group)]."
+"Medium","Report-only","CA003-Block-Legacy-Auth","Policy is report-only and enforces nothing. Last changed 0 day(s) ago. Review sign-in logs and decide whether to promote it."
+"Medium","Report-only","CA007-Block-Mobile-Outside-US","Policy is report-only and enforces nothing. Last changed 0 day(s) ago. Review sign-in logs and decide whether to promote it."
+"Low","Exclusions","CA003-Block-Legacy-Auth","Excluded group 'SG-Legacy-Auth-Exceptions' is empty. Likely a stale exception; confirm whether it is still needed."
+"Low","Report-only","CA005-Require-Compliant-Device","Policy is Off. Last changed 0 day(s) ago. Confirm whether it is still needed or should be removed."

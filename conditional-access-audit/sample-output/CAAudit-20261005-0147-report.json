@@ -1,0 +1,483 @@
+{
+  "GeneratedUtc": "2026-10-05T01:47:35.4970420Z",
+  "TenantId": "9618501a-9658-4892-b270-3b7b109ee739",
+  "RunAs": "PaulHwang@paulhwangsec.onmicrosoft.com",
+  "SecurityDefaults": "Disabled",
+  "PolicyCount": 7,
+  "Findings": [
+    {
+      "Severity": "High",
+      "Check": "Break-glass",
+      "Policy": "CA004-Block-High-SignIn-Risk",
+      "Finding": "bg-admin02@paulhwangsec.onmicrosoft.com is targeted and not excluded (All users). This applies now."
+    },
+    {
+      "Severity": "High",
+      "Check": "Legacy auth",
+      "Policy": "CA003-Block-Legacy-Auth",
+      "Finding": "Legacy authentication block exists but is report-only, so legacy protocols are still allowed."
+    },
+    {
+      "Severity": "Medium",
+      "Check": "MFA coverage",
+      "Policy": "",
+      "Finding": "2 user(s) have MFA only for specific apps or under conditions: Raj Patel via CA006-MFA-Office365-Only [apps: Office 365 (app group)]; Tom Becker via CA006-MFA-Office365-Only [apps: Office 365 (app group)]."
+    },
+    {
+      "Severity": "Medium",
+      "Check": "Report-only",
+      "Policy": "CA003-Block-Legacy-Auth",
+      "Finding": "Policy is report-only and enforces nothing. Last changed 0 day(s) ago. Review sign-in logs and decide whether to promote it."
+    },
+    {
+      "Severity": "Medium",
+      "Check": "Report-only",
+      "Policy": "CA007-Block-Mobile-Outside-US",
+      "Finding": "Policy is report-only and enforces nothing. Last changed 0 day(s) ago. Review sign-in logs and decide whether to promote it."
+    },
+    {
+      "Severity": "Low",
+      "Check": "Exclusions",
+      "Policy": "CA003-Block-Legacy-Auth",
+      "Finding": "Excluded group 'SG-Legacy-Auth-Exceptions' is empty. Likely a stale exception; confirm whether it is still needed."
+    },
+    {
+      "Severity": "Low",
+      "Check": "Report-only",
+      "Policy": "CA005-Require-Compliant-Device",
+      "Finding": "Policy is Off. Last changed 0 day(s) ago. Confirm whether it is still needed or should be removed."
+    }
+  ],
+  "Policies": [
+    {
+      "Policy": "CA001-Require-MFA-Admins",
+      "State": "On",
+      "IncludeUsers": "",
+      "IncludeGroups": "",
+      "IncludeRoles": "Global Administrator; Privileged Role Administrator; Security Administrator; Conditional Access Administrator; User Administrator",
+      "IncludeGuests": "",
+      "ExcludeUsers": "Emergency Access 01 (bg-admin01@paulhwangsec.onmicrosoft.com); Emergency Access 02 (bg-admin02@paulhwangsec.onmicrosoft.com)",
+      "ExcludeGroups": "",
+      "ExcludeRoles": "",
+      "ExcludeGuests": "",
+      "IncludeApps": "All",
+      "ExcludeApps": "",
+      "UserActions": "",
+      "Platforms": "Any",
+      "Locations": "Any",
+      "ClientApps": "All client apps",
+      "SignInRisk": "",
+      "UserRisk": "",
+      "Grant": "Require multifactor authentication",
+      "Created": "2026-10-05 00:41 UTC",
+      "Modified": "Never",
+      "Id": "75d47a9a-cd11-46ed-a8a2-51d30732fdcd"
+    },
+    {
+      "Policy": "CA002-Require-MFA-AllUsers",
+      "State": "On",
+      "IncludeUsers": "All",
+      "IncludeGroups": "",
+      "IncludeRoles": "",
+      "IncludeGuests": "",
+      "ExcludeUsers": "",
+      "ExcludeGroups": "SG-Emergency-Access; SG-MFA-Exempt",
+      "ExcludeRoles": "",
+      "ExcludeGuests": "",
+      "IncludeApps": "All",
+      "ExcludeApps": "",
+      "UserActions": "",
+      "Platforms": "Any",
+      "Locations": "Any",
+      "ClientApps": "All client apps",
+      "SignInRisk": "",
+      "UserRisk": "",
+      "Grant": "Require multifactor authentication",
+      "Created": "2026-10-05 01:14 UTC",
+      "Modified": "Never",
+      "Id": "6c13ad7b-c4e1-42ac-9656-03ba6bfcf2e6"
+    },
+    {
+      "Policy": "CA003-Block-Legacy-Auth",
+      "State": "Report-only",
+      "IncludeUsers": "All",
+      "IncludeGroups": "",
+      "IncludeRoles": "",
+      "IncludeGuests": "",
+      "ExcludeUsers": "",
+      "ExcludeGroups": "SG-Emergency-Access; SG-Legacy-Auth-Exceptions",
+      "ExcludeRoles": "",
+      "ExcludeGuests": "",
+      "IncludeApps": "All",
+      "ExcludeApps": "",
+      "UserActions": "",
+      "Platforms": "Any",
+      "Locations": "Any",
+      "ClientApps": "Exchange ActiveSync (legacy); Other clients (legacy)",
+      "SignInRisk": "",
+      "UserRisk": "",
+      "Grant": "Block access",
+      "Created": "2026-10-05 01:14 UTC",
+      "Modified": "Never",
+      "Id": "5de5471f-7768-4e74-be0a-91cfb944e1e7"
+    },
+    {
+      "Policy": "CA004-Block-High-SignIn-Risk",
+      "State": "On",
+      "IncludeUsers": "All",
+      "IncludeGroups": "",
+      "IncludeRoles": "",
+      "IncludeGuests": "",
+      "ExcludeUsers": "Emergency Access 01 (bg-admin01@paulhwangsec.onmicrosoft.com)",
+      "ExcludeGroups": "",
+      "ExcludeRoles": "",
+      "ExcludeGuests": "",
+      "IncludeApps": "All",
+      "ExcludeApps": "",
+      "UserActions": "",
+      "Platforms": "Any",
+      "Locations": "Any",
+      "ClientApps": "All client apps",
+      "SignInRisk": "high",
+      "UserRisk": "",
+      "Grant": "Block access",
+      "Created": "2026-10-05 01:14 UTC",
+      "Modified": "Never",
+      "Id": "a8583aff-5ef9-4008-9d1c-71067d00adee"
+    },
+    {
+      "Policy": "CA005-Require-Compliant-Device",
+      "State": "Off",
+      "IncludeUsers": "All",
+      "IncludeGroups": "",
+      "IncludeRoles": "",
+      "IncludeGuests": "",
+      "ExcludeUsers": "",
+      "ExcludeGroups": "SG-Emergency-Access",
+      "ExcludeRoles": "",
+      "ExcludeGuests": "",
+      "IncludeApps": "All",
+      "ExcludeApps": "",
+      "UserActions": "",
+      "Platforms": "Any",
+      "Locations": "Any",
+      "ClientApps": "All client apps",
+      "SignInRisk": "",
+      "UserRisk": "",
+      "Grant": "Require compliant device",
+      "Created": "2026-10-05 01:14 UTC",
+      "Modified": "Never",
+      "Id": "9754a23f-f6f3-4729-b1e7-ccd21faa9f05"
+    },
+    {
+      "Policy": "CA006-MFA-Office365-Only",
+      "State": "On",
+      "IncludeUsers": "All",
+      "IncludeGroups": "",
+      "IncludeRoles": "",
+      "IncludeGuests": "",
+      "ExcludeUsers": "",
+      "ExcludeGroups": "SG-Emergency-Access",
+      "ExcludeRoles": "",
+      "ExcludeGuests": "",
+      "IncludeApps": "Office 365 (app group)",
+      "ExcludeApps": "",
+      "UserActions": "",
+      "Platforms": "Any",
+      "Locations": "Any",
+      "ClientApps": "All client apps",
+      "SignInRisk": "",
+      "UserRisk": "",
+      "Grant": "Require multifactor authentication",
+      "Created": "2026-10-05 01:14 UTC",
+      "Modified": "Never",
+      "Id": "cf59c0b6-d09f-4012-a49e-6ac78f2e40fc"
+    },
+    {
+      "Policy": "CA007-Block-Mobile-Outside-US",
+      "State": "Report-only",
+      "IncludeUsers": "",
+      "IncludeGroups": "SG-CA-Pilot",
+      "IncludeRoles": "",
+      "IncludeGuests": "",
+      "ExcludeUsers": "",
+      "ExcludeGroups": "",
+      "ExcludeRoles": "",
+      "ExcludeGuests": "",
+      "IncludeApps": "All",
+      "ExcludeApps": "",
+      "UserActions": "",
+      "Platforms": "Include: android, iOS",
+      "Locations": "Include: All; Exclude: Allowed-Countries-US",
+      "ClientApps": "Browser; Mobile apps and desktop clients",
+      "SignInRisk": "",
+      "UserRisk": "",
+      "Grant": "Block access",
+      "Created": "2026-10-05 01:14 UTC",
+      "Modified": "Never",
+      "Id": "b84899ae-d6ec-49de-861b-89d575155ab9"
+    }
+  ],
+  "Exclusions": [
+    {
+      "Policy": "CA001-Require-MFA-Admins",
+      "State": "On",
+      "Type": "User",
+      "Name": "Emergency Access 01 (bg-admin01@paulhwangsec.onmicrosoft.com)",
+      "Detail": ""
+    },
+    {
+      "Policy": "CA001-Require-MFA-Admins",
+      "State": "On",
+      "Type": "User",
+      "Name": "Emergency Access 02 (bg-admin02@paulhwangsec.onmicrosoft.com)",
+      "Detail": ""
+    },
+    {
+      "Policy": "CA002-Require-MFA-AllUsers",
+      "State": "On",
+      "Type": "Group",
+      "Name": "SG-Emergency-Access",
+      "Detail": "2 member(s): Emergency Access 01, Emergency Access 02"
+    },
+    {
+      "Policy": "CA002-Require-MFA-AllUsers",
+      "State": "On",
+      "Type": "Group",
+      "Name": "SG-MFA-Exempt",
+      "Detail": "2 member(s): Tom Becker, Raj Patel"
+    },
+    {
+      "Policy": "CA003-Block-Legacy-Auth",
+      "State": "Report-only",
+      "Type": "Group",
+      "Name": "SG-Emergency-Access",
+      "Detail": "2 member(s): Emergency Access 01, Emergency Access 02"
+    },
+    {
+      "Policy": "CA003-Block-Legacy-Auth",
+      "State": "Report-only",
+      "Type": "Group",
+      "Name": "SG-Legacy-Auth-Exceptions",
+      "Detail": "EMPTY GROUP"
+    },
+    {
+      "Policy": "CA004-Block-High-SignIn-Risk",
+      "State": "On",
+      "Type": "User",
+      "Name": "Emergency Access 01 (bg-admin01@paulhwangsec.onmicrosoft.com)",
+      "Detail": ""
+    },
+    {
+      "Policy": "CA005-Require-Compliant-Device",
+      "State": "Off",
+      "Type": "Group",
+      "Name": "SG-Emergency-Access",
+      "Detail": "2 member(s): Emergency Access 01, Emergency Access 02"
+    },
+    {
+      "Policy": "CA006-MFA-Office365-Only",
+      "State": "On",
+      "Type": "Group",
+      "Name": "SG-Emergency-Access",
+      "Detail": "2 member(s): Emergency Access 01, Emergency Access 02"
+    },
+    {
+      "Policy": "CA007-Block-Mobile-Outside-US",
+      "State": "Report-only",
+      "Type": "Location",
+      "Name": "Allowed-Countries-US",
+      "Detail": ""
+    }
+  ],
+  "BreakGlass": [
+    {
+      "Account": "bg-admin01@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA001-Require-MFA-Admins",
+      "State": "On",
+      "Status": "OK: excluded",
+      "Via": "Direct user exclusion"
+    },
+    {
+      "Account": "bg-admin01@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA002-Require-MFA-AllUsers",
+      "State": "On",
+      "Status": "OK: excluded",
+      "Via": "Group: SG-Emergency-Access"
+    },
+    {
+      "Account": "bg-admin01@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA003-Block-Legacy-Auth",
+      "State": "Report-only",
+      "Status": "OK: excluded",
+      "Via": "Group: SG-Emergency-Access"
+    },
+    {
+      "Account": "bg-admin01@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA004-Block-High-SignIn-Risk",
+      "State": "On",
+      "Status": "OK: excluded",
+      "Via": "Direct user exclusion"
+    },
+    {
+      "Account": "bg-admin01@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA005-Require-Compliant-Device",
+      "State": "Off",
+      "Status": "OK: excluded",
+      "Via": "Group: SG-Emergency-Access"
+    },
+    {
+      "Account": "bg-admin01@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA006-MFA-Office365-Only",
+      "State": "On",
+      "Status": "OK: excluded",
+      "Via": "Group: SG-Emergency-Access"
+    },
+    {
+      "Account": "bg-admin01@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA007-Block-Mobile-Outside-US",
+      "State": "Report-only",
+      "Status": "OK: not targeted",
+      "Via": ""
+    },
+    {
+      "Account": "bg-admin02@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA001-Require-MFA-Admins",
+      "State": "On",
+      "Status": "OK: excluded",
+      "Via": "Direct user exclusion"
+    },
+    {
+      "Account": "bg-admin02@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA002-Require-MFA-AllUsers",
+      "State": "On",
+      "Status": "OK: excluded",
+      "Via": "Group: SG-Emergency-Access"
+    },
+    {
+      "Account": "bg-admin02@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA003-Block-Legacy-Auth",
+      "State": "Report-only",
+      "Status": "OK: excluded",
+      "Via": "Group: SG-Emergency-Access"
+    },
+    {
+      "Account": "bg-admin02@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA004-Block-High-SignIn-Risk",
+      "State": "On",
+      "Status": "NOT EXCLUDED",
+      "Via": "All users"
+    },
+    {
+      "Account": "bg-admin02@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA005-Require-Compliant-Device",
+      "State": "Off",
+      "Status": "OK: excluded",
+      "Via": "Group: SG-Emergency-Access"
+    },
+    {
+      "Account": "bg-admin02@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA006-MFA-Office365-Only",
+      "State": "On",
+      "Status": "OK: excluded",
+      "Via": "Group: SG-Emergency-Access"
+    },
+    {
+      "Account": "bg-admin02@paulhwangsec.onmicrosoft.com",
+      "Policy": "CA007-Block-Mobile-Outside-US",
+      "State": "Report-only",
+      "Status": "OK: not targeted",
+      "Via": ""
+    }
+  ],
+  "MfaCoverage": [
+    {
+      "User": "Aisha Khan",
+      "UPN": "aisha.khan@paulhwangsec.onmicrosoft.com",
+      "Status": "Covered",
+      "FullCoverage": "CA002-Require-MFA-AllUsers",
+      "PartialCoverage": "CA006-MFA-Office365-Only [apps: Office 365 (app group)]"
+    },
+    {
+      "User": "Emergency Access 01",
+      "UPN": "bg-admin01@paulhwangsec.onmicrosoft.com",
+      "Status": "Not covered (break-glass, expected)",
+      "FullCoverage": "",
+      "PartialCoverage": ""
+    },
+    {
+      "User": "Emergency Access 02",
+      "UPN": "bg-admin02@paulhwangsec.onmicrosoft.com",
+      "Status": "Not covered (break-glass, expected)",
+      "FullCoverage": "",
+      "PartialCoverage": ""
+    },
+    {
+      "User": "Derek Nguyen",
+      "UPN": "derek.nguyen@paulhwangsec.onmicrosoft.com",
+      "Status": "Covered",
+      "FullCoverage": "CA002-Require-MFA-AllUsers",
+      "PartialCoverage": "CA006-MFA-Office365-Only [apps: Office 365 (app group)]"
+    },
+    {
+      "User": "James Carter",
+      "UPN": "james.carter@paulhwangsec.onmicrosoft.com",
+      "Status": "Covered",
+      "FullCoverage": "CA002-Require-MFA-AllUsers",
+      "PartialCoverage": "CA006-MFA-Office365-Only [apps: Office 365 (app group)]"
+    },
+    {
+      "User": "Linda Park",
+      "UPN": "linda.park@paulhwangsec.onmicrosoft.com",
+      "Status": "Covered",
+      "FullCoverage": "CA002-Require-MFA-AllUsers",
+      "PartialCoverage": "CA006-MFA-Office365-Only [apps: Office 365 (app group)]"
+    },
+    {
+      "User": "Maria Lopez",
+      "UPN": "maria.lopez@paulhwangsec.onmicrosoft.com",
+      "Status": "Covered",
+      "FullCoverage": "CA002-Require-MFA-AllUsers",
+      "PartialCoverage": "CA006-MFA-Office365-Only [apps: Office 365 (app group)]"
+    },
+    {
+      "User": "Paul Hwang",
+      "UPN": "PaulHwang@paulhwangsec.onmicrosoft.com",
+      "Status": "Covered",
+      "FullCoverage": "CA001-Require-MFA-Admins; CA002-Require-MFA-AllUsers",
+      "PartialCoverage": "CA006-MFA-Office365-Only [apps: Office 365 (app group)]"
+    },
+    {
+      "User": "Raj Patel",
+      "UPN": "raj.patel@paulhwangsec.onmicrosoft.com",
+      "Status": "Partial",
+      "FullCoverage": "",
+      "PartialCoverage": "CA006-MFA-Office365-Only [apps: Office 365 (app group)]"
+    },
+    {
+      "User": "Sarah Kim",
+      "UPN": "sarah.kim@paulhwangsec.onmicrosoft.com",
+      "Status": "Covered",
+      "FullCoverage": "CA002-Require-MFA-AllUsers",
+      "PartialCoverage": "CA006-MFA-Office365-Only [apps: Office 365 (app group)]"
+    },
+    {
+      "User": "Tom Becker",
+      "UPN": "tom.becker@paulhwangsec.onmicrosoft.com",
+      "Status": "Partial",
+      "FullCoverage": "",
+      "PartialCoverage": "CA006-MFA-Office365-Only [apps: Office 365 (app group)]"
+    }
+  ],
+  "LegacyAuth": [
+    {
+      "Policy": "CA003-Block-Legacy-Auth",
+      "State": "Report-only",
+      "RawState": "enabledForReportingButNotEnforced",
+      "CoversEAS": true,
+      "CoversOther": true,
+      "AllUsers": true,
+      "AllResources": true
+    }
+  ]
+}
