@@ -1,0 +1,5 @@
+"Group","Processing","Rule","Expected","Actual","Status","Missing","Unexpected"
+"DG-All-Employees-Licensed","On","(user.extensionAttribute1 -eq ""Employee"") -and (user.usageLocation -eq ""US"") -and (user.accountEnabled -eq true)","5","5","OK","",""
+"DG-Contractors","On","(user.extensionAttribute1 -eq ""Contractor"")","3","3","OK","",""
+"DG-Dept-Plant-Operations","On","(user.department -eq ""Plant Operations"")","2","2","OK","",""
+"DG-Location-Salt-Lake-City","On","(user.city -eq ""Salt Lake City"")","3","3","OK","",""
