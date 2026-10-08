@@ -1,26 +1,18 @@
-##### cd $HOME\\entra-id-labs
+# Entra ID Labs
 
-##### @'
+Hands-on Microsoft Entra ID projects focused on identity security and access governance.
 
-##### \# Entra ID Labs
+> **Lab work, not production.** Everything here was built and tested in a Microsoft 365 trial tenant with Entra ID P2. None of it has been run against a production tenant.
 
-##### 
+## Projects
 
-##### Hands-on Microsoft Entra ID projects focused on identity security and access governance.
+| Project | What it is | Status |
+|---|---|---|
+| [Conditional Access Audit](conditional-access-audit/) | A read-only PowerShell tool that audits an unfamiliar tenant's Conditional Access configuration: policy inventory, exclusions, break-glass coverage, MFA gaps, stalled report-only policies, and legacy authentication blocking. | Complete |
+| [Provisioning Maturity](provisioning-maturity/) | Moving from manual access assignment to attribute-driven provisioning: dynamic groups, group-based licensing, an access package with approval and expiration, an access review, and a rule-versus-actual membership check. | Complete |
 
-##### 
+Each project folder has its own README with setup steps, sample output, and caveats.
 
-##### > \*\*Lab work, not production.\*\* Everything here was built and tested in a Microsoft 365 trial tenant with Entra ID P2. None of it has been run against a production tenant.
+## How this was built
 
-##### 
-
-##### \## Projects
-
-##### 
-
-##### | Project | What it is | Status |
-
-##### |---|---|---|
-
-##### | \[Conditional Access Audit](conditional-access-audit/) | A read-only PowerShell tool that audits an unfamiliar tenant's Conditional Access configuration: policy inventory, exclusions, break-glass coverage, MFA gaps, stalled report-only policies, and legacy
-
+The code in this repository was written with AI assistance (Anthropic's Claude). Each project README describes who did what.
